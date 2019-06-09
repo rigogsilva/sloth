@@ -39,13 +39,13 @@ def populate_extra_files():
 
 
 setup(
-    name='sloth_cli-cli',
+    name='sloth-cli',
     version=settings['version'],
     description=(
         'A library to analyse how slow your code is. This is a quick way to '
         'validate what is slow in your code. '
     ),
-    url='https://github.com/rigogsilva/sloth_cli-cli-cli',
+    url='https://github.com/rigogsilva/sloth-cli',
     author='Rodrigo da Silva',
     author_email='dasil021@umn.edu',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
