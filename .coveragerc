@@ -1,0 +1,9 @@
+[run]
+source = *.py
+omit =
+    versioner.py
+    setup.py
+    bin/*
+    dist/*
+    resources/*
+    examples/*
