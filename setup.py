@@ -1,22 +1,32 @@
-import os
-import json
 import glob
-from setuptools import setup
+import os
+import re
+
 from setuptools import find_packages
+from setuptools import setup
 
 PACKAGE_NAME = 'sloth_cli'
 MY_DIRECTORY = os.path.dirname(__file__)
 PACKAGE_ROOT = os.path.join(MY_DIRECTORY, PACKAGE_NAME)
 
-with open(os.path.join(MY_DIRECTORY, 'requirements.txt'), 'r') as f:
-    dependencies = [
-        entry.strip()
-        for entry in f.read().strip().split('\n')
-    ]
+
+def get_version():
+    path = os.path.join(MY_DIRECTORY, 'sloth_cli', '__init__.py')
+    with open(path, 'r') as f:
+        return (
+            re.compile(r'\n__version__\s+=\s+\'(?P<version>[0-9.]+)\'')
+            .search(f.read())
+            .group('version')
+        )
 
 
-with open(os.path.join(PACKAGE_ROOT, 'settings.json'), 'r') as f:
-    settings = json.load(f)
+def readme():
+    path = os.path.realpath(os.path.join(
+        os.path.dirname(__file__),
+        'README.md'
+    ))
+    with open(path) as f:
+        return f.read()
 
 
 def populate_extra_files():
@@ -40,11 +50,14 @@ def populate_extra_files():
 
 setup(
     name='sloth-cli',
-    version=settings['version'],
+    version=get_version(),
     description=(
         'A library to analyse how slow your code is. This is a quick way to '
         'validate what is slow in your code. '
     ),
+    long_description=readme(),
+    long_description_content_type='text/markdown',
+    keywords=['cProfile', 'speed', 'cli', 'performance', 'slow'],
     url='https://github.com/rigogsilva/sloth-cli',
     author='Rodrigo da Silva',
     author_email='dasil021@umn.edu',
@@ -59,8 +72,10 @@ setup(
         ]
     ),
 
-    classifiers=['Programming Language :: Python :: 3.6'],
-    install_requires=dependencies,
+    classifiers=[
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7'
+    ],
     setup_requires=['pytest-runner'],
     tests_require=['pytest', 'pytest-cov', 'coverage']
 )

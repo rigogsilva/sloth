@@ -1,19 +1,15 @@
-import json
 import typing
 
-from sloth_cli import config
+import sloth_cli
 from sloth_cli import parsing
 from sloth_cli import profiler
 
 
 def show_version(**kwargs):
     """Displays the current version"""
-    path = config.get_path('settings.json')
-    with open(path) as f:
-        data = json.load(f)
 
-    print('sloth-cli Version {}'.format(data['version']))
-    return data['version']
+    print('sloth-cli Version {}'.format(sloth_cli.__version__))
+    return sloth_cli.__version__
 
 
 def show_help():

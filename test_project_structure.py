@@ -19,7 +19,6 @@ def test_required_files_present():
     """Required files should exist"""
     assert path_exists('README.md')
     assert path_exists('.gitignore')
-    assert path_exists('.gitlab-ci.yml')
     assert path_exists('requirements.txt')
     assert path_exists('.coafile')
     assert path_exists('.coveragerc')
