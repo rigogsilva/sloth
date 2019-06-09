@@ -28,7 +28,10 @@ def run(arguments: typing.List[str] = None):
 
     args = parsing.parse(arguments)
     default_action = 'version' if args.pop('version') else None
-    action = args.pop('action') or default_action
+    if args.get('action'):
+        action = args.pop('action') or default_action
+    else:
+        action = 'speed'
 
     actions = dict(
         version=show_version,

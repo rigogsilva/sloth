@@ -34,11 +34,11 @@ Using a `tester.py` cli script (argsparse):
 ### To run `tester.py` with arguments:
 
 ```bash
-sloth speed -f tester.py --cmd fake --fake-arg test
+sloth -f tester.py --cmd fake --fake-arg test
 ```
 
 ### To get the `tester.py` help:
 
 ```bash
-sloth speed -f tester.py -l 100 --cmd --help
+sloth -f tester.py -l 100 --cmd --help
 ```

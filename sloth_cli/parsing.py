@@ -13,22 +13,18 @@ def parse(arguments: typing.List[str] = None):
     """
     parser = ArgumentParser()
     parser.add_argument('--version', action='store_true', default=False)
-    subparsers = parser.add_subparsers(dest='action')
 
-    speed = subparsers.add_parser(
-        'speed', description='Shows seconds spent per line'
-    )
-    speed.add_argument(
+    parser.add_argument(
         '--file-name', '-f',
         help='The file name to analyse',
-        dest='filename'
+        dest='filename',
+        required=True
     )
-    speed.add_argument(
+    parser.add_argument(
         '--lines', '-l',
-        help='The number of lines to print',
-        default=100
+        help='The number of lines to print'
     )
-    speed.add_argument(
+    parser.add_argument(
         '--sort', '-s',
         help='How to sort the values: time, cumulative, calls, and filename. '
              'Defaults to cumulative',
@@ -40,13 +36,13 @@ def parse(arguments: typing.List[str] = None):
     If the script you are running takes any args or kwargs you can pass them to 
     the script by using the "--cmd" argument. Do that by adding: --cmd {kwargs}. 
     E.g.:
-        sloth-cli speed -f tester.py --cmd fake --fake-arg test
+        sloth -f tester.py --cmd fake --fake-arg test
             or
-        sloth-cli speed -f tester.py -l 100 --cmd --help
+        sloth -f tester.py -l 100 --cmd --help
         
     This will run the following: tester.py fake --fake-arg test
     """
-    speed.add_argument(
+    parser.add_argument(
         '--cmd',
         help=args_docs,
         nargs=argparse.REMAINDER
