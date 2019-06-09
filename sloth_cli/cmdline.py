@@ -12,7 +12,7 @@ def show_version(**kwargs):
     with open(path) as f:
         data = json.load(f)
 
-    print('sloth_cli-cli Version {}'.format(data['version']))
+    print('sloth-cli Version {}'.format(data['version']))
     return data['version']
 
 

@@ -40,9 +40,9 @@ def parse(arguments: typing.List[str] = None):
     If the script you are running takes any args or kwargs you can pass them to 
     the script by using the "--cmd" argument. Do that by adding: --cmd {kwargs}. 
     E.g.:
-        sloth_cli-cli speed -f tester.py --cmd fake --fake-arg test
+        sloth-cli speed -f tester.py --cmd fake --fake-arg test
             or
-        sloth_cli-cli speed -f tester.py -l 100 --cmd --help
+        sloth-cli speed -f tester.py -l 100 --cmd --help
         
     This will run the following: tester.py fake --fake-arg test
     """

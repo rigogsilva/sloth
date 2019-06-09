@@ -1,10 +1,10 @@
-# sloth
+# sloth-cli
 
 A library to speed the profile (cProfile) analyses of code performance on a per
 line basis. This library allow the user to call a python script file with 
 arguments and analyse what lines of code are taking longer to process.
 
-An example output of the `sloth`:
+An example output of the `sloth-cli`:
 
 ```shell
 Sat Jun  8 11:56:40 2019    profileOutput.profile
@@ -24,7 +24,7 @@ Sat Jun  8 11:56:40 2019    profileOutput.profile
 ## Install
 
 ```
-pip install sloth
+pip install sloth-cli
 ```
 
 ## Usage
@@ -34,11 +34,11 @@ Using a `tester.py` cli script (argsparse):
 ### To run `tester.py` with arguments:
 
 ```bash
-sloth slowness -f tester.py --cmd fake --fake-arg test
+sloth speed -f tester.py --cmd fake --fake-arg test
 ```
 
 ### To get the `tester.py` help:
 
 ```bash
-sloth slowness -f tester.py -l 100 --cmd --help
+sloth speed -f tester.py -l 100 --cmd --help
 ```
