@@ -4,7 +4,7 @@ import glob
 from setuptools import setup
 from setuptools import find_packages
 
-PACKAGE_NAME = 'sloth'
+PACKAGE_NAME = 'sloth_cli'
 MY_DIRECTORY = os.path.dirname(__file__)
 PACKAGE_ROOT = os.path.join(MY_DIRECTORY, PACKAGE_NAME)
 
@@ -39,13 +39,13 @@ def populate_extra_files():
 
 
 setup(
-    name='sloth',
+    name='sloth_cli-cli',
     version=settings['version'],
     description=(
         'A library to analyse how slow your code is. This is a quick way to '
         'validate what is slow in your code. '
     ),
-    url='https://github.com/rigogsilva/sloth-cli',
+    url='https://github.com/rigogsilva/sloth_cli-cli-cli',
     author='Rodrigo da Silva',
     author_email='dasil021@umn.edu',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
@@ -55,7 +55,7 @@ setup(
 
     entry_points=dict(
         console_scripts=[
-            'sloth=sloth:run'
+            'sloth=sloth_cli:run'
         ]
     ),
 
