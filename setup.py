@@ -45,7 +45,7 @@ setup(
         'A library to analyse how slow your code is. This is a quick way to '
         'validate what is slow in your code. '
     ),
-    url='https://gitlab.wheniwork.com/data/pipper/sloth',
+    url='https://github.com/rigogsilva/sloth-cli',
     author='Rodrigo da Silva',
     author_email='dasil021@umn.edu',
     packages=find_packages(exclude=['contrib', 'docs', 'tests*']),

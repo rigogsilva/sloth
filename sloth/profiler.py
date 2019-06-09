@@ -15,9 +15,10 @@ def run(filename: str, lines: int, sort: str, **kwargs):
     :param lines:
         The number of lines to print
     :param sort:
-        The sort type
+        How to sort the values: time, cumulative, calls, and filename. Defaults
+        to cumulative'
     :param kwargs:
-    :return:
+        Aditional kwargs
     """
     absolute_path = os.path.abspath(filename)
     directory = os.path.dirname(absolute_path)
