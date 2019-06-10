@@ -1,5 +1,7 @@
 # sloth-cli
 
+![logo](docs/sloth.jpg)
+
 A library to speed the profile (cProfile) analyses of code performance on a per
 line basis. This library allow the user to call a python script file with 
 arguments and analyse what lines of code are taking longer to process.
