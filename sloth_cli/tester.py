@@ -5,7 +5,6 @@ from argparse import ArgumentParser
 
 def parser(arguments: typing.List[str] = None):
     parser = ArgumentParser()
-    parser.add_argument('--version', action='store_true', default=False)
     subparsers = parser.add_subparsers(dest='action')  # noqa
     slowness = subparsers.add_parser(
         'fake', description='Shows seconds spent per line'
