@@ -23,26 +23,11 @@ Sat Jun  8 11:56:40 2019    profileOutput.profile
         3    3.012    1.004    3.012    1.004 {built-in method time.sleep}
 ``` 
 
+
 ## Install
 
 ```
 pip install sloth-cli
-```
-
-## CLI Usage
-
-Using a `tester.py` cli script (argsparse):
-
-### To run `tester.py` with arguments:
-
-```bash
-sloth -f tester.py --cmd fake --fake-arg test
-```
-
-### To get the `tester.py` help:
-
-```bash
-sloth -f tester.py -l 100 --cmd --help
 ```
 
 ## Decorator Usage
@@ -97,4 +82,20 @@ if __name__ == '__main__':
         1    3.005    3.005    3.005    3.005 test_profiler.py:6(_loop_sleep)
         6    0.000    0.000    0.000    0.000 capture.py:413(write)
         2    0.000    0.000    0.000    0.000 test_profiler.py:13(_loop)
+```
+
+## CLI Usage
+
+Using a `tester.py` cli script (argsparse):
+
+### To run `tester.py` with arguments:
+
+```bash
+sloth -f tester.py --cmd fake --fake-arg test
+```
+
+### To get the `tester.py` help:
+
+```bash
+sloth -f tester.py -l 100 --cmd --help
 ```

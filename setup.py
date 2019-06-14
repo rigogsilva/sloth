@@ -11,6 +11,7 @@ PACKAGE_ROOT = os.path.join(MY_DIRECTORY, PACKAGE_NAME)
 
 
 def get_version():
+    """Returns the version"""
     path = os.path.join(MY_DIRECTORY, 'sloth_cli', '__init__.py')
     with open(path, 'r') as f:
         return (
@@ -21,6 +22,7 @@ def get_version():
 
 
 def readme():
+    """Returns the read me text"""
     path = os.path.realpath(os.path.join(
         os.path.dirname(__file__),
         'README.md'
